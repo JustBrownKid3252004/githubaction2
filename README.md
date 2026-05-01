@@ -29,6 +29,6 @@ To keep this project secure, the following secrets must be configured in the Git
 ```text
 githubaction2/
 ├── .github/workflows/
-│   └── test.yml       # The core automation logic
+│   └── send_kiss.yml       # The core automation logic
 ├── voice.m4a          # The voice file to be sent
 └── README.md          # Project documentation
