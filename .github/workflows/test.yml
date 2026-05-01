@@ -15,26 +15,25 @@ jobs:
 
       - name: Send Voice Message
         run: |+
-          curl -v -F "chat_id=7541742800" \
+          curl -v -F "chat_id=${{ secrets.MY_CHAT_ID }}" \
                -F "voice=@voice.m4a" \
-               https://api.telegram.org/bot8697723553:AAE0P3NeUm22rj_gC2il-2fXE5GasHhwMzI/sendVoice
+               https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendVoice
               
       - name: Send Kiss
         uses: appleboy/telegram-action@master
         with:
-          to: "7541742800"
-          token: "8697723553:AAE0P3NeUm22rj_gC2il-2fXE5GasHhwMzI"
+          to: ${{ secrets.MY_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           message: "Nway လေးရေ... မောင့်ဆီက အနမ်းလေး ရောက်ပြီနော်❤️"
+      # - name: Send Voice Message
+      #   run: |+
+      #     curl -v -F "chat_id=8110267464" \
+      #          -F "voice=@voice.m4a" \
+      #          https://api.telegram.org/bot8697723553:AAE0P3NeUm22rj_gC2il-2fXE5GasHhwMzI/sendVoice
 
-      - name: Send Voice Message
-        run: |+
-          curl -v -F "chat_id=8110267464" \
-               -F "voice=@voice.m4a" \
-               https://api.telegram.org/bot8697723553:AAE0P3NeUm22rj_gC2il-2fXE5GasHhwMzI/sendVoice
-               
-      - name: Send Kiss
-        uses: appleboy/telegram-action@master
-        with:
-          to: "8110267464"
-          token: "8697723553:AAE0P3NeUm22rj_gC2il-2fXE5GasHhwMzI"
-          message: "Nway လေးရေ... မောင့်ဆီက အနမ်းလေး ရောက်ပြီနော်❤️"
+      # - name: Send Kiss
+      #   uses: appleboy/telegram-action@master
+      #   with:
+      #     to: "8110267464"
+      #     token: "8697723553:AAE0P3NeUm22rj_gC2il-2fXE5GasHhwMzI"
+      #     message: "Nway လေးရေ... မောင့်ဆီက အနမ်းလေး ရောက်ပြီနော်❤️"
