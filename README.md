@@ -1,19 +1,2 @@
 # githubaction2
-
-name: Telegram Alert
-on: 
-    workflow_dispatch:
-    schedule: 
-        
-        - cron: '30 2,14 * * *'
-     
-jobs:
-    kiss-job:
-    run-on: ubuntu-latest
-    steps:
-        - name: Send Kiss
-          uses: appleboy/telegram-action@master
-          with:
-            to: 7541742800
-            token: 8697723553:AAE0P3NeUm22rj_gC2il-2fXE5GasHhwMzI
-            message: testing
+Testong 

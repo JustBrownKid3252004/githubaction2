@@ -12,6 +12,7 @@ jobs:
       - name: Send Kiss
         uses: appleboy/telegram-action@master
         with:
-          to: "7541742800"
+          # to: "7541742800"
+          to: "8110267464"
           token: "8697723553:AAE0P3NeUm22rj_gC2il-2fXE5GasHhwMzI"
-          message: "testing"
+          message: "testing Kiss For Nway <3"
