@@ -1,8 +1,9 @@
 name: Telegram Testing
+
 on:
+  workflow_dispatch:
   schedule:
     - cron: "30 2,14 * * *"
-
 
 jobs:
   kiss-job:
