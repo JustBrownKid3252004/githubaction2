@@ -1,0 +1,34 @@
+name: Telegram Testing
+on:
+  schedule:
+    - cron: "30 2,14 * * *"
+
+
+jobs:
+  kiss-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Send Voice Message to Nway
+        run: |+
+          curl -v -F "chat_id=${{ secrets.NWAY_ID }}" \
+               -F "voice=@voice.m4a" \
+               https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendVoice
+
+      - name: Send Kiss to Nway
+        if: success()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.NWAY_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: "Nway လေးရေ... မောင့်ဆီက အနမ်းလေး ရောက်ပြီနော် ❤️"
+
+      - name: Report to Me
+        if: success()
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.MY_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: "Report: Nway ဆီကို အနမ်းနဲ့ အသံဖိုင် ပို့ဆောင်ပေးပြီးပါပြီဗျာ။"
