@@ -1,0 +1,17 @@
+name: Two Minute Alert
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"  # ၂ မိနစ်တစ်ခါ (ဒါပေမဲ့ GitHub က အနည်းဆုံး ၅-၁၀ မိနစ်လောက် ခြားပြီးမှ Run ပေးလေ့ရှိပါတယ်)
+  workflow_dispatch:      # လက်နဲ့ စမ်းချင်ရင် ခလုတ်ပေါ်အောင် ထည့်ထားပေးတာပါ
+
+jobs:
+  alert-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Report to Me
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.MY_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: "ဒါက ၂ မိနစ်တစ်ခါ ပို့တဲ့ Test Report ပါဗျာ။"
