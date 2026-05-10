@@ -2,8 +2,6 @@
 
 This project is a GitHub Actions-based automation designed to send scheduled voice messages and text alerts to Telegram. It is currently configured to send a daily "Kiss & Voice" greeting to my girlfriend, Nway.
 
-## 🚀 Features
-
 *   **Scheduled Automation**: Runs twice daily (9:30 AM and 9:30 PM Myanmar Standard Time).
 *   **Voice Message Support**: Automatically uploads and sends `voice.m4a` using the Telegram Bot API.
 *   **Secure Implementation**: All sensitive credentials (Bot Token and Chat IDs) are managed via GitHub Secrets to ensure privacy.
